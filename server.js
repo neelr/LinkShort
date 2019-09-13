@@ -4,7 +4,7 @@ const app = express();
 var Airtable = require('airtable');
 const body = require("body-parser");
 var next = require("next");
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV == "production";
 var base = new Airtable({apiKey: process.env.AIRTABLE}).base('appYCaIMntmznlXkT');
 var server = next({dev});
 var handler = server.getRequestHandler();

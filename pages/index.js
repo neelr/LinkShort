@@ -11,9 +11,9 @@ export default class Index extends React.Component {
 		<h3 id="succText"></h3>
 		<form id="form">
           <p>URL Short</p>
-          <input className="input" id="_id" placeholder="https://s.neelr.dev/" type="text" />
+          <input className="input" id="_id" placeholder="amazon" type="text" />
           <p>URL</p>
-          <input className="input" id="_redirect" placeholder="https://neelr.dev" type="url" />
+          <input className="input" id="_redirect" placeholder="https://amazon.com" type="url" />
           <p></p>
           <button id="submit" className="button">Shorten URL!</button>
 		  </form>
