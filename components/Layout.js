@@ -10,7 +10,7 @@ class Layout extends React.Component {
                     <title>Link Short</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                    <link rel="icon" href="http://icon-park.com/imagefiles/link_icon_light_blue.png"/>
+                    <link rel="icon" href="https://cdn.glitch.com/8249b84a-e64c-452a-aa2d-e312a2b45e6b%2Flink_icon_light_blue.png?v=1568348149498"/>
                 </Head>
                 <div style={{ paddingBottom: "6rem" }}>
                     <Header />
@@ -183,6 +183,9 @@ class Layout extends React.Component {
             } else {
                 document.getElementById("dark").parentNode.removeChild(document.getElementById("dark"));
             }
+        }
+        if (localStorage.getItem("theme")==undefined) {
+          localStorage.setItem("theme", "light");
         }
         if (localStorage.getItem("theme") == "dark") {
             var style = document.createElement('style');
