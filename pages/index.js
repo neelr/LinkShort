@@ -17,6 +17,7 @@ export default class Index extends React.Component {
           <p></p>
           <button id="submit" className="button">Shorten URL!</button>
 		  </form>
+        <br/>
       </Layout>
     )
   }
@@ -28,6 +29,9 @@ export default class Index extends React.Component {
 			"_id": document.getElementById("_id").value,
 			"_redirect": document.getElementById("_redirect").value
 		}); 
+    if (document.getElementById("_id").value.includes("/")) {
+      document.getElementById("errText").innerHTML = " A backslash (/) is not allowed in the URL short!";
+    } else {
 		$.post("/",
 		{
 			"_id": document.getElementById("_id").value,
@@ -37,8 +41,11 @@ export default class Index extends React.Component {
 				document.getElementById("errText").innerHTML = "Error! That URL Short has been taken!"
 			} else {
 				document.getElementById("succText").innerHTML = "Great! Your URL is now https://s.neelr.dev/"+document.getElementById("_id").value
-			}
+			  document.getElementById("_id").value = "";
+        document.getElementById("_redirect").value = "";
+      }
 		});
+    }
 	});
   }
 }
